@@ -1,8 +1,6 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
-const PATHPREFIX = process.env.PATHPREFIX || "";
-
 export default function (eleventyConfig) {
 
   // === Plugins ===
@@ -63,7 +61,6 @@ export default function (eleventyConfig) {
   );
 
   // === Shortcodes ===
-  // Color-coded syntax block for Weird Wisdom posts
   eleventyConfig.addShortcode("colorCode", (code, colors) => {
     return `<div class="color-code-block">
       <pre class="color-code-pre">${code}</pre>
@@ -74,7 +71,6 @@ export default function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: PATHPREFIX,
     dir: {
       input: ".",
       includes: "src/_includes",
