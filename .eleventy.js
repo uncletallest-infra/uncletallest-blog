@@ -25,7 +25,8 @@ export default function (eleventyConfig) {
   });
 
   // === Passthrough copies ===
-  eleventyConfig.addPassthroughCopy("public/assets");
+  // Map public/assets → _site/assets so /assets/ paths resolve correctly
+  eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
 
   // === Collections ===
   eleventyConfig.addCollection("weirdWisdom", (collectionApi) =>
