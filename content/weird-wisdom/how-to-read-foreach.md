@@ -13,9 +13,11 @@ description: Your brain reads left to right. forEach doesn't. Here's the bridge.
 draft: true
 ---
 
-The `forEach` method seems confusing to some folks, and this is normal — computers evaluate data differently than humans.
+The `forEach` method seems confusing to some folks, and this is normal —
+computers evaluate data differently than humans.
 
-Use this color-coded breakdown to read yours so it makes sense to your inefficient human mind.
+Use this color-coded breakdown to read yours so it makes sense to your
+inefficient human mind.
 
 **Color order: Green > Red > Grey > Yellow**
 
@@ -24,13 +26,21 @@ Use this color-coded breakdown to read yours so it makes sense to your inefficie
 - ⚫ **Grey** — in this array
 - 🟡 **Yellow** — do the following
 
-```javascript
-initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
-});
-```
+<figure class="post-figure">
+  <img
+    src="/assets/images/weird-wisdom/foreach-color-coded.png"
+    alt="forEach color coded: Green = For Each, Red = item, Grey = in this array, Yellow = do the following"
+    class="post-image"
+  />
+</figure>
 
-Read it out loud: *"For each **cardData** in **initialCards**, do the following..."*
+Read it out loud: *"For each **cardData** in **initialCards**, do the
+following..."*
 
-Your brain wants subject-verb-object. forEach hands you the verb first. Once you see the color order, you can't unsee it.
+Your brain wants subject-verb-object. `forEach` hands you the verb first.
+Once you see the color order, you can't unsee it.
+
+---
+
+*This works for any `forEach` — swap out the variable names and the
+pattern holds. Same colors, same order, every time.*
