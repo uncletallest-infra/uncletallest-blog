@@ -428,10 +428,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  text-decoration: none;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
+.committee-member:hover { transform: translateY(-2px); }
+
 .committee-member--weird-wisdom { border-top: 3px solid var(--purple-interactive); }
+.committee-member--weird-wisdom:hover { border-color: var(--purple-interactive); }
 .committee-member--off-the-rails { border-top: 3px solid var(--purple-decorative); }
+.committee-member--off-the-rails:hover { border-color: var(--purple-decorative); }
 
 .member-handle { font-weight: 700; font-size: 1rem; color: var(--text); }
 
