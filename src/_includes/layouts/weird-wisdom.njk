@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+<article class="post post--weird-wisdom">
+  <header class="post-header">
+    <div class="post-eyebrow">
+      <span class="persona-tag persona-tag--weird-wisdom">Weird Wisdom</span>
+      {% if series %}<span class="series-tag">{{ series }}</span>{% endif %}
+    </div>
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <span>Uncle Tallest</span>
+      <span>{{ date | readableDate }}</span>
+      {% if tags %}<span>{{ tags | join(", ") }}</span>{% endif %}
+    </div>
+  </header>
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+</article>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="theme-dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | {{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="{{ site.name }}" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-brand">
+        Uncle <span class="brand-accent">Tallest</span> Productions
+      </a>
+      <div class="nav-links">
+        <a href="/weird-wisdom/">Weird Wisdom</a>
+        <a href="/off-the-rails/">Off the Rails</a>
+        <a href="/about/">About</a>
+        <button class="theme-toggle" aria-label="Toggle theme">◐</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ site.name }} — Built clean, shipped honest.</p>
+    <p><a href="/feed.xml">RSS</a></p>
+  </footer>
+
+  <script src="/assets/js/theme.js"></script>
+</body>
+</html>

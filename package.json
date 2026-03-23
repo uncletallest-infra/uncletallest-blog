@@ -1,0 +1,15 @@
+{
+  "name": "uncletallest-blog",
+  "version": "0.1.0",
+  "description": "Uncle Tallest Productions - Weird Wisdom & Off the Rails",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+  }
+}

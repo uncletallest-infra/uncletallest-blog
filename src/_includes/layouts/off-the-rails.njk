@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+---
+<article class="post post--off-the-rails">
+  <header class="post-header">
+    <div class="post-eyebrow">
+      <span class="persona-tag persona-tag--off-the-rails">Off the Rails</span>
+      <span class="persona-byline">with Pliny, the Moderately Informed</span>
+    </div>
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <span>{{ date | readableDate }}</span>
+      {% if linkedin %}<span class="linkedin-flag">Also on LinkedIn</span>{% endif %}
+    </div>
+  </header>
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+</article>

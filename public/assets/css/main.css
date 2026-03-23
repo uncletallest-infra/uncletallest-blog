@@ -1,0 +1,240 @@
+/* === Uncle Tallest Productions — Design System === */
+/* Extends continuity-bridge.github.io palette       */
+
+:root {
+  --purple-interactive: #7864ff;
+  --purple-decorative: #b565d8;
+  --accent-green: #4db84d;
+
+  /* Dark (Matrix Noir) - default */
+  --bg: #0a0a0a;
+  --bg-card: #161616;
+  --bg-hover: #1e1e1e;
+  --text: #e8e8e8;
+  --text-muted: #b8b8b8;
+  --text-dim: #888888;
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* Persona accents */
+  --weird-wisdom-accent: var(--purple-interactive);
+  --off-the-rails-accent: var(--purple-decorative);
+}
+
+.theme-light {
+  --bg: #f5f5f0;
+  --bg-card: #ffffff;
+  --bg-hover: #f0f0eb;
+  --text: #1a1e1a;
+  --text-muted: #3a4a3a;
+  --text-dim: #5a6a5a;
+  --accent-green: #2a8a2a;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+/* === Base === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* === Header === */
+.site-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-accent { color: var(--purple-decorative); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--purple-interactive); }
+
+.theme-toggle {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--purple-interactive);
+  color: var(--purple-interactive);
+}
+
+/* === Main === */
+.site-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* === Posts === */
+.post { max-width: 720px; margin: 0 auto; }
+
+.post-eyebrow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.persona-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+}
+
+.persona-tag--weird-wisdom {
+  background: rgba(120, 100, 255, 0.15);
+  color: var(--weird-wisdom-accent);
+  border: 1px solid rgba(120, 100, 255, 0.3);
+}
+
+.persona-tag--off-the-rails {
+  background: rgba(181, 101, 216, 0.15);
+  color: var(--off-the-rails-accent);
+  border: 1px solid rgba(181, 101, 216, 0.3);
+}
+
+.persona-byline {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.series-tag {
+  font-size: 0.75rem;
+  color: var(--accent-green);
+  border: 1px solid rgba(77, 184, 77, 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+}
+
+.post-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-dim);
+  font-size: 0.875rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.linkedin-flag {
+  color: var(--accent-green);
+}
+
+.post-content { font-size: 1.1rem; }
+.post-content h2 { margin: 2rem 0 1rem; font-size: 1.5rem; }
+.post-content h3 { margin: 1.5rem 0 0.75rem; font-size: 1.25rem; }
+.post-content p { margin-bottom: 1.25rem; }
+.post-content a { color: var(--purple-interactive); }
+
+.post-content code {
+  background: var(--bg-hover);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+}
+
+/* === Color Code Block (Weird Wisdom signature) === */
+.color-code-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.color-code-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.legend-item {
+  font-size: 0.875rem;
+  color: var(--item-color);
+  font-weight: 600;
+}
+
+/* === Footer === */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.site-footer a { color: var(--purple-interactive); text-decoration: none; }
+.site-footer a:hover { color: var(--purple-decorative); }
