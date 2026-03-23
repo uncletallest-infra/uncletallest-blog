@@ -21,11 +21,20 @@ Static blog for **uncletallest.productions** — home of two content formats:
 ## Design System
 
 Extends the [continuity-bridge](https://continuity-bridge.github.io) palette:
-- Dark: Matrix Noir (`#0a0a0a`)
-- Light: Inverted Zim (`#f5f5f0`)
+
+**Purple system (tech/instance side)**
 - Interactive: `#7864ff`
 - Decorative: `#b565d8`
-- Green: `#4db84d`
+
+**Fire palette (human/creator side)**
+- Gold: `#FF9201` — streaming frame, brand accent
+- Orange: `#D43600` — primary logo color
+- Sienna: `#890201` — depth/shadow
+- Deep: `#400000` — darkest anchor
+
+**Themes**
+- Dark: Matrix Noir (`#0a0a0a`)
+- Light: Inverted Zim (`#f5f5f0`)
 
 ## Getting Started
 
@@ -43,11 +52,11 @@ npm run build    # production build to _site/
 title: How to Read X
 persona: weird-wisdom
 layout: layouts/weird-wisdom.njk
-series: how-x-thinks   # optional — ties to /data/series.json
+series: how-x-thinks   # optional
 language: javascript   # optional
 date: 2026-04-15
 tags: [javascript, beginners]
-draft: true            # remove to publish
+draft: true
 ---
 ```
 
@@ -59,18 +68,29 @@ persona: off-the-rails
 layout: layouts/off-the-rails.njk
 date: 2026-04-22
 tags: [neurodivergence, process]
-linkedin: true   # flag for cross-posting
+linkedin: true
 draft: true
 ---
 ```
 
-## Pending
+## Status
 
-- [ ] Homepage index template
-- [ ] Per-format listing pages
+- [x] Project scaffolded
+- [x] Homepage (`index.njk`)
+- [x] About page (`about.njk`) — Committee of Lunatics framing, voice from 2010 source
+- [x] Base layout (`base.njk`)
+- [x] Weird Wisdom post layout
+- [x] Off the Rails post layout
+- [x] Full design system CSS — fire palette + purple system
+- [x] Theme toggle JS (Matrix Noir / Inverted Zim)
+- [x] Sample posts (both formats, draft: true)
+- [ ] Per-format listing pages (`/weird-wisdom/` and `/off-the-rails/`)
 - [ ] Python API (`/api`) — subscribers + deploy webhook
 - [ ] RSS feed verification
-- [ ] Local folder rename from `continuity-bridge/uncletallest-blog` → `uncletallest-infra/uncletallest-blog`
+- [ ] Brand images copied to `/public/assets/images/`
+- [ ] Brand sigil — original UTP crest (replaces Irken emblem)
+- [ ] Codeberg remote URL update
+- [ ] Deploy to DigitalOcean App Platform (April 2026, post domain purchase)
 
 ## Repository
 

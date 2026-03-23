@@ -1,0 +1,105 @@
+---
+layout: layouts/base.njk
+title: Home
+description: Weird Wisdom & Off the Rails — brought to you by the fine folks at Uncle Tallest Productions
+pagination:
+  data: collections.posts
+  size: 999
+  alias: posts
+eleventyExcludeFromCollections: true
+---
+
+{# === Hero === #}
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Broadcasting from Austin, TX</div>
+    <h1 class="hero-title">
+      Uncle <span class="hero-accent">Tallest</span> Productions
+    </h1>
+    <p class="hero-tagline">
+      Two formats. One voice. Brought to you by the fine folks at Uncle Tallest Productions.
+    </p>
+    <div class="hero-shows">
+      <a href="/weird-wisdom/" class="show-card show-card--weird-wisdom">
+        <span class="show-card-label">Weird Wisdom</span>
+        <span class="show-card-host">Uncle Tallest</span>
+        <span class="show-card-desc">Punchy cognitive maps for the code that trips up human brains.</span>
+      </a>
+      <a href="/off-the-rails/" class="show-card show-card--off-the-rails">
+        <span class="show-card-label">Off the Rails</span>
+        <span class="show-card-host">Pliny, the Moderately Informed</span>
+        <span class="show-card-desc">Engineering with a neurodivergent brain. Honest. Occasionally useful.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# === Latest Posts === #}
+<section class="latest">
+  <div class="latest-inner">
+
+    {# Weird Wisdom column #}
+    <div class="latest-column">
+      <div class="latest-header">
+        <span class="persona-tag persona-tag--weird-wisdom">Weird Wisdom</span>
+        <a href="/weird-wisdom/" class="latest-all">All posts →</a>
+      </div>
+      {% set wwPosts = collections.weirdWisdom | reverse %}
+      {% if wwPosts.length %}
+        <ul class="post-list">
+          {% for post in wwPosts | slice(0, 5) %}
+            {% if not post.data.draft %}
+            <li class="post-list-item">
+              <a href="{{ post.url }}" class="post-list-link">
+                <span class="post-list-title">{{ post.data.title }}</span>
+                <span class="post-list-date">{{ post.date | readableDate }}</span>
+              </a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="latest-empty">First post incoming. Pool is seeded.</p>
+      {% endif %}
+    </div>
+
+    {# Off the Rails column #}
+    <div class="latest-column">
+      <div class="latest-header">
+        <span class="persona-tag persona-tag--off-the-rails">Off the Rails</span>
+        <a href="/off-the-rails/" class="latest-all">All posts →</a>
+      </div>
+      {% set otrPosts = collections.offTheRails | reverse %}
+      {% if otrPosts.length %}
+        <ul class="post-list">
+          {% for post in otrPosts | slice(0, 5) %}
+            {% if not post.data.draft %}
+            <li class="post-list-item">
+              <a href="{{ post.url }}" class="post-list-link">
+                <span class="post-list-title">{{ post.data.title }}</span>
+                <span class="post-list-date">{{ post.date | readableDate }}</span>
+              </a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="latest-empty">First post incoming. Stack is chosen.</p>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{# === About strip === #}
+<section class="about-strip">
+  <div class="about-strip-inner">
+    <p>
+      Built by <strong>Jerry Jackson</strong> (Uncle Tallest) — developer, teacher, 
+      and occasional chaos agent. Working at the intersection of code, cognition, 
+      and the interesting things that happen when a neurodivergent brain meets 
+      a computer.
+    </p>
+    <a href="/about/" class="about-link">More about the station →</a>
+  </div>
+</section>
