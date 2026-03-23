@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+title: Weird Wisdom
+description: Punchy cognitive maps for the code that trips up human brains. Color-coded. Ships fast.
+pagination:
+  data: collections.weirdWisdom
+  size: 999
+  alias: posts
+eleventyExcludeFromCollections: true
+---
+
+<section class="listing-header listing-header--weird-wisdom">
+  <div class="listing-header-inner">
+    <span class="persona-tag persona-tag--weird-wisdom">Weird Wisdom</span>
+    <h1 class="listing-title">Weird Wisdom</h1>
+    <p class="listing-byline">with Uncle Tallest</p>
+    <p class="listing-desc">
+      Punchy cognitive maps for the code that trips up human brains.
+      Color-coded. Irreverent. Ships fast.
+    </p>
+  </div>
+</section>
+
+<section class="listing-posts">
+  <div class="listing-posts-inner">
+    {% set published = [] %}
+    {% for post in collections.weirdWisdom | reverse %}
+      {% if not post.data.draft %}
+        {% set published = published.concat([post]) %}
+      {% endif %}
+    {% endfor %}
+
+    {% if published.length %}
+      <ul class="listing-list">
+        {% for post in published %}
+        <li class="listing-item">
+          <a href="{{ post.url }}" class="listing-item-link">
+            <div class="listing-item-meta">
+              <span class="listing-item-date">{{ post.date | readableDate }}</span>
+              {% if post.data.series %}
+                <span class="series-tag">{{ post.data.series }}</span>
+              {% endif %}
+              {% if post.data.language %}
+                <span class="language-tag">{{ post.data.language }}</span>
+              {% endif %}
+            </div>
+            <h2 class="listing-item-title">{{ post.data.title }}</h2>
+            {% if post.data.description %}
+              <p class="listing-item-desc">{{ post.data.description }}</p>
+            {% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <div class="listing-empty">
+        <p>First post incoming. Pool is seeded.</p>
+        <p class="listing-empty-sub">Check back after April 2026.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>

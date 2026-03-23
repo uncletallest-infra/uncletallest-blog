@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+title: Off the Rails
+description: Engineering with a neurodivergent brain. Honest about the walls. Occasionally useful about the workarounds.
+pagination:
+  data: collections.offTheRails
+  size: 999
+  alias: posts
+eleventyExcludeFromCollections: true
+---
+
+<section class="listing-header listing-header--off-the-rails">
+  <div class="listing-header-inner">
+    <span class="persona-tag persona-tag--off-the-rails">Off the Rails</span>
+    <h1 class="listing-title">Off the Rails</h1>
+    <p class="listing-byline">with Pliny, the Moderately Informed</p>
+    <p class="listing-desc">
+      Engineering with a neurodivergent brain. Honest about the walls.
+      Occasionally useful about the workarounds.
+    </p>
+  </div>
+</section>
+
+<section class="listing-posts">
+  <div class="listing-posts-inner">
+    {% set published = [] %}
+    {% for post in collections.offTheRails | reverse %}
+      {% if not post.data.draft %}
+        {% set published = published.concat([post]) %}
+      {% endif %}
+    {% endfor %}
+
+    {% if published.length %}
+      <ul class="listing-list">
+        {% for post in published %}
+        <li class="listing-item">
+          <a href="{{ post.url }}" class="listing-item-link">
+            <div class="listing-item-meta">
+              <span class="listing-item-date">{{ post.date | readableDate }}</span>
+              {% if post.data.linkedin %}
+                <span class="linkedin-flag">Also on LinkedIn</span>
+              {% endif %}
+            </div>
+            <h2 class="listing-item-title">{{ post.data.title }}</h2>
+            {% if post.data.description %}
+              <p class="listing-item-desc">{{ post.data.description }}</p>
+            {% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <div class="listing-empty">
+        <p>First post incoming. Stack is chosen.</p>
+        <p class="listing-empty-sub">Check back after April 2026.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
