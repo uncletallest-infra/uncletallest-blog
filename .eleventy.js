@@ -1,6 +1,8 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
+const PATHPREFIX = process.env.PATHPREFIX || "/";
+
 export default function (eleventyConfig) {
 
   // === Plugins ===
@@ -25,7 +27,6 @@ export default function (eleventyConfig) {
   });
 
   // === Passthrough copies ===
-  // Map public/assets → _site/assets so /assets/ paths resolve correctly
   eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
 
   // === Collections ===
@@ -71,6 +72,7 @@ export default function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: PATHPREFIX,
     dir: {
       input: ".",
       includes: "src/_includes",
