@@ -34,7 +34,7 @@ eleventyExcludeFromCollections: true
       <ul class="listing-list">
         {% for post in published %}
         <li class="listing-item">
-          <a href="{{ post.url }}" class="listing-item-link">
+          <a href="{{ post.url | prefix }}" class="listing-item-link">
             <div class="listing-item-meta">
               <span class="listing-item-date">{{ post.date | readableDate }}</span>
               {% if post.data.series %}
