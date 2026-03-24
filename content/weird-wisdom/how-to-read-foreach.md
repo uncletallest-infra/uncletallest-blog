@@ -10,7 +10,6 @@ tags:
   - functions
   - beginners
 description: Your brain reads left to right. forEach doesn't. Here's the bridge.
-draft: true
 ---
 
 The `forEach` method seems confusing to some folks, and this is normal —
@@ -28,7 +27,7 @@ inefficient human mind.
 
 <figure class="post-figure">
   <img
-    src="/assets/images/weird-wisdom/foreach-color-coded.png"
+    src="{{ '/assets/images/weird-wisdom/foreach-color-coded.png' | prefix }}"
     alt="forEach color coded: Green = For Each, Red = item, Grey = in this array, Yellow = do the following"
     class="post-image"
   />
