@@ -1,6 +1,7 @@
 {
   "name": "uncletallest-blog",
   "version": "0.1.0",
+  "type": "module",
   "description": "Uncle Tallest Productions - Weird Wisdom & Off the Rails",
   "scripts": {
     "build": "eleventy",

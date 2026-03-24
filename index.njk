@@ -20,12 +20,12 @@ eleventyExcludeFromCollections: true
       Two formats. One voice. Brought to you by the fine folks at Uncle Tallest Productions.
     </p>
     <div class="hero-shows">
-      <a href="{{ '/weird-wisdom/' | url }}" class="show-card show-card--weird-wisdom">
+      <a href="{{ '/weird-wisdom/' | prefix }}" class="show-card show-card--weird-wisdom">
         <span class="show-card-label">Weird Wisdom</span>
         <span class="show-card-host">Uncle Tallest</span>
         <span class="show-card-desc">Punchy cognitive maps for the code that trips up human brains.</span>
       </a>
-      <a href="{{ '/off-the-rails/' | url }}" class="show-card show-card--off-the-rails">
+      <a href="{{ '/off-the-rails/' | prefix }}" class="show-card show-card--off-the-rails">
         <span class="show-card-label">Off the Rails</span>
         <span class="show-card-host">Pliny, the Moderately Informed</span>
         <span class="show-card-desc">Engineering with a neurodivergent brain. Honest. Occasionally useful.</span>
@@ -42,7 +42,7 @@ eleventyExcludeFromCollections: true
     <div class="latest-column">
       <div class="latest-header">
         <span class="persona-tag persona-tag--weird-wisdom">Weird Wisdom</span>
-        <a href="{{ '/weird-wisdom/' | url }}" class="latest-all">All posts →</a>
+        <a href="{{ '/weird-wisdom/' | prefix }}" class="latest-all">All posts →</a>
       </div>
       {% set wwPosts = collections.weirdWisdom | reverse %}
       {% if wwPosts.length %}
@@ -67,7 +67,7 @@ eleventyExcludeFromCollections: true
     <div class="latest-column">
       <div class="latest-header">
         <span class="persona-tag persona-tag--off-the-rails">Off the Rails</span>
-        <a href="{{ '/off-the-rails/' | url }}" class="latest-all">All posts →</a>
+        <a href="{{ '/off-the-rails/' | prefix }}" class="latest-all">All posts →</a>
       </div>
       {% set otrPosts = collections.offTheRails | reverse %}
       {% if otrPosts.length %}
@@ -100,6 +100,6 @@ eleventyExcludeFromCollections: true
       and the interesting things that happen when a neurodivergent brain meets 
       a computer.
     </p>
-    <a href="{{ '/about/' | url }}" class="about-link">More about the station →</a>
+    <a href="{{ '/about/' | prefix }}" class="about-link">More about the station →</a>
   </div>
 </section>

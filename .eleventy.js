@@ -1,7 +1,7 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
-const PATHPREFIX = process.env.PATHPREFIX || "/";
+const PATHPREFIX = process.env.PATHPREFIX || "";
 
 export default function (eleventyConfig) {
 
@@ -28,6 +28,12 @@ export default function (eleventyConfig) {
 
   // === Passthrough copies ===
   eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
+
+  // === Custom prefix filter — prepends PATHPREFIX exactly once ===
+  eleventyConfig.addFilter("prefix", (path) => {
+    if (!PATHPREFIX) return path;
+    return PATHPREFIX.replace(/\/$/, "") + path;
+  });
 
   // === Collections ===
   eleventyConfig.addCollection("weirdWisdom", (collectionApi) =>
@@ -72,7 +78,6 @@ export default function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: PATHPREFIX,
     dir: {
       input: ".",
       includes: "src/_includes",
