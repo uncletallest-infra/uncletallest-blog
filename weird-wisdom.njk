@@ -38,7 +38,7 @@ eleventyExcludeFromCollections: true
             <div class="listing-item-meta">
               <span class="listing-item-date">{{ post.date | readableDate }}</span>
               {% if post.data.series %}
-                <span class="series-tag">{{ post.data.series }}</span>
+                <span class="series-tag">{{ series[post.data.series].title if series[post.data.series] else post.data.series }}</span>
               {% endif %}
               {% if post.data.language %}
                 <span class="language-tag">{{ post.data.language }}</span>
