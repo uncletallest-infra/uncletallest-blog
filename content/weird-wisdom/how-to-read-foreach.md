@@ -10,6 +10,7 @@ tags:
   - functions
   - beginners
 description: Your brain reads left to right. forEach doesn't. Here's the bridge.
+permalink: /weird-wisdom/how-to-read-foreach/
 ---
 
 The `forEach` method seems confusing to some folks, and this is normal —
