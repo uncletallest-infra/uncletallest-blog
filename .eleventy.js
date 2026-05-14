@@ -18,7 +18,7 @@ export default function (eleventyConfig) {
       language: "en",
       title: "Uncle Tallest Productions",
       subtitle: "Weird Wisdom & Off the Rails",
-      base: "https://uncletallest.productions/",
+      base: "https://blog.uncletallest-productions.org/",
       author: {
         name: "Jerry Jackson",
         email: "",
